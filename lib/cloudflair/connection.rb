@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'faraday'
-require 'faraday_middleware'
 require 'faraday/detailed_logger'
 require 'cloudflair/error/cloudflair_error'
 

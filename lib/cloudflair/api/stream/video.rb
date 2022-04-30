@@ -7,7 +7,7 @@ module Cloudflair
     class Video
       include Cloudflair::Entity
 
-      attr_reader :video_id
+      attr_reader :account_id, :video_id
 
       path 'accounts/:account_id/stream'
 
@@ -21,9 +21,7 @@ module Cloudflair
       def copy(url, additional_options = {})
         params = { url: url }
         params.merge(additional_options)
-        res = response connection.post("#{path}/copy", params)
-        @video_id = res&.result&.uid
-        res
+        response connection.post("#{path}/copy", params)
       end
 
       def details

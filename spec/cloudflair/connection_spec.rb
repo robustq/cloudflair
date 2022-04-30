@@ -36,11 +36,6 @@ describe Cloudflair::Connection do
       expect(described_class.new.builder.handlers)
         .to include Faraday::Adapter::NetHttp
     end
-
-    it 'adds the json middleware' do
-      expect(described_class.new.builder.handlers)
-        .to include FaradayMiddleware::ParseJson
-    end
   end
 
   describe 'user service key' do
