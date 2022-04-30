@@ -33,6 +33,11 @@ module Cloudflair
         raise Cloudflair::CloudflairError, "video_id must not be nil for this request" if @video_id.nil?
         response connection.post("#{path}/#{@video_id}/token", params)
       end
+
+      def delete
+        raise Cloudflair::CloudflairError, "video_id must not be nil for this request" if @video_id.nil?
+        response connection.delete("#{path}/#{@video_id}")
+      end
     end
   end
 end
