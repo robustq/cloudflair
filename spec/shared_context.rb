@@ -4,6 +4,7 @@ require 'spec_helper'
 
 require 'cloudflair'
 require 'faraday'
+require 'faraday_middleware'
 require 'faraday/detailed_logger'
 
 RSpec.shared_context 'connection setup' do
