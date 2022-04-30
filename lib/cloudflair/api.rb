@@ -8,8 +8,8 @@ require 'cloudflair/communication'
 module Cloudflair
   extend Cloudflair::Communication
 
-  def self.video(account_id, video_id=nil)
-    Video.new(account_id, video_id)
+  def self.video(video_id=nil)
+    Stream::Video.new(video_id)
   end
 
   def self.zone(zone_id)

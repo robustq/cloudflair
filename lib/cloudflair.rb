@@ -32,6 +32,7 @@ module Cloudflair
       setting :key
       setting :email
       setting :user_service_key
+      setting :account_id
     end
   end
 

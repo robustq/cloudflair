@@ -4,16 +4,16 @@ require 'cloudflair/entity'
 
 module Cloudflair
   module Stream
-    class Video < Cloudflair::Stream::Base
+    class Video
       include Cloudflair::Entity
 
-      attr_reader :account_id
       attr_reader :video_id
 
       path 'accounts/:account_id/stream'
 
-      def initialize(account_id, video_id=nil)
-        @account_id = account_id
+      def initialize(video_id=nil)
+        @account_id = Cloudflair.config.cloudflare.auth.account_id
+        raise Cloudflair::CloudflairError, "account_id must be configured in order to use these endpoints" if @account_id.nil?
         @video_id = video_id
       end
 
