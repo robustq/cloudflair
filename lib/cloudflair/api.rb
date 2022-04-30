@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
+require 'cloudflair/api/stream/video'
 require 'cloudflair/api/zone'
 require 'cloudflair/api/railguns'
 require 'cloudflair/communication'
 
 module Cloudflair
   extend Cloudflair::Communication
+
+  def self.video(account_id, video_id=nil)
+    Video.new(account_id, video_id)
+  end
 
   def self.zone(zone_id)
     Zone.new zone_id
