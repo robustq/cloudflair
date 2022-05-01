@@ -36,7 +36,7 @@ module Cloudflair
 
       def delete
         raise Cloudflair::CloudflairError, "video_id must not be nil for this request" if @video_id.nil?
-        response connection.delete("#{path}/#{@video_id}")
+        connection.delete("#{path}/#{@video_id}")
       end
     end
   end
